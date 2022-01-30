@@ -5,21 +5,21 @@ public interface Car {
 	}
 public class Audi implements Car {
 
-	   @Override
+
 	   public void draw() {
 	      System.out.println("Inside Audi::draw() method.");
 	   }
 	}
 public class BMW implements Car {
 
-	   @Override
+	  
 	   public void draw() {
 	      System.out.println("Inside BMW::draw() method.");
 	   }
 	}
 public class Benz implements Car {
 
-	   @Override
+	   
 	   public void draw() {
 	      System.out.println("Inside benz::draw() method.");
 	   }
