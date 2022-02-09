@@ -1,0 +1,20 @@
+
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-5.0.dtd">
+<hibernate-mapping>
+<class name="com.mondee.student" table="student">
+<id name="sid" column="sid"/>
+<property name="name" column="sname"></property>
+<property name="marks" column="marks"></property>
+</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
