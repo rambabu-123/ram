@@ -1,0 +1,15 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+<beans>
+<bean id = "audi" class = "com.mondee.Car">
+<property name = "fuelType" value = "petrol"></property>
+<property name = "speed" value = "200"></property>
+</bean>
+
+<bean id = "goa" class = "com.mondee.Travel">
+<property name = "v">
+<ref bean="audi"/>
+</property>
+</bean>
+</beans>
