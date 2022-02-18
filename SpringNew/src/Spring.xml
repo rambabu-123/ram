@@ -1,0 +1,10 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+<beans>
+<bean id = "ram" class = "com.mondee.Student">
+<property name = "sid" value = "1"></property>
+<property name = "sname" value = "rambabu"></property>
+<property name = "smarks" value = "303"></property>
+</bean>
+</beans>
