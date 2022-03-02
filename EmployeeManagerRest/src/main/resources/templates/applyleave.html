@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Apply Leave</title>
+    <style type="text/css">
+    div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+button{
+
+padding:3px;
+margin:3px;
+}
+h2{
+	text-align:center;
+	color: navy;
+	font-family:Arial,serif,cooper;
+	font-weight:bolder;
+	text-decoration-color: navy;
+	}
+	    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #935;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #795;
+}
+    </style>
+    
+</head>
+<body bgcolor="steelblue">
+<center>
+  <ul> <h3>
+<li><a th:href="@{/employee/myprofile/{id}(id=${employee.id})}">Profile</a> </li>
+<li><a th:href="@{/employee/{id}/leave(id=${employee.id})}">Apply Leave</a></li>
+<li><a th:href="@{/employee/{id}/myleaves(id=${employee.id})}">View Leave</a></li>
+<li><a th:href="@{/}">Logout</a></li></h3>
+</ul>
+ <br>
+  <h2>Apply Leave</h2>
+  <form th:action="@{/employee/{id}/leave/save(id=${id})}" method="post" th:object="${leave}" >
+  
+      <label for="patientName">Employee Name :</label>
+      <input type="text" id="patientName"  placeholder="Enter Employee Name" th:field ="*{firstName}"><br><br>
+  
+    
+      <label for="number">Mobile Number :</label>
+      <input type="number" id="number"  placeholder="Enter Mobile Number" th:field ="*{mobileNumber}"><br><br>
+    
+    
+    
+      <label for="department">Department :</label>
+      <select id="department" th:field="*{department}">
+        <option th:value="Development" th:text="Development"></option>
+        <option th:value="Testing" th:text="Testing"></option>
+        <option th:value="HumanResource" th:text="HumanResource"></option>
+      </select>
+    
+    <br><br>
+    
+      <label for="number">Days :</label>
+      <input type="number" id="number" placeholder="Enter Number of Day" th:field ="*{day}"><br><br>
+        
+      <label for="date">Date :</label>
+      <input type="date" id="date" th:field ="*{date}"><br><br>
+    
+    
+      <label for="time">Time :</label>
+      <input type="time" id="date" th:field ="*{time}"><br><br>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</center>
+</body>
+</html>

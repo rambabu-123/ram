@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Home</title>
+    <style type="text/css">
+
+	#grad {
+background-image: linear-gradient(to right, mediumpurple ,mediumvioletred,navajowhite,mintcream ,palevioletred,steelblue,thistle);
+}
+    div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+button{
+
+padding:3px;
+margin:3px;
+}
+h1,h3{
+	text-align:center;
+	color: greenyellow;
+	font-family:Arial,serif,cooper;
+	font-weight:bolder;
+	text-decoration-color: greenyellow;
+	}
+    
+    ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #925;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #789;
+}
+</style>
+</head>
+<body id="grab">
+<center>
+ <h1 align="center"> Manager Home </h1>
+ <h3 align="center">
+ <ul>
+<li><a th:href="@{/manager/myprofile/{id}(id=${manager.id})}">Profile</a></li>
+<li><a th:href="@{/manager/checkleaves/{id}(id=${manager.id})}">View Leave</a></li>
+<li><a th:href="@{/}">Logout</a></h3></li>
+</ul>
+</center>
+</body>
+</html>

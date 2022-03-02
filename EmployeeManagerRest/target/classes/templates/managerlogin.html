@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manager Login</title>
+    
+    <style type="text/css">
+
+    div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+button{
+
+padding:3px;
+margin:3px;
+}
+h2{
+	text-align:center;
+	color: tomato;
+	font-family:Arial,serif,cooper;
+	font-weight:bolder;
+	text-decoration-color: tomato;
+	}
+
+    </style>
+    
+</head>
+<body bgcolor="lightgoldenrodyellow" align="center">
+<br><br>
+<h1>Manager Login</h1>	<hr>
+<form th:action="@{/manager/managerlogin}" method="POST" th:object="${manager}">
+  
+    <label for="email">Email address</label>
+    <input type="email" id="email" th:field ="*{email}" placeholder="Enter email" > <br><br>
+    
+  
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Password" th:field ="*{password}"><br><br>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>

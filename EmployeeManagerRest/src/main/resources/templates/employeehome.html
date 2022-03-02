@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Home</title>
+    <style type="text/css">
+
+    h2{
+	text-align:center;
+	color:wheat;
+	font-family:Arial,serif,cooper;
+	font-weight:bolder;
+	text-decoration-color:turquoise;
+	}
+	#grad1 {
+background-image: linear-gradient(to right, mediumpurple ,bisque,limegreen,darkgrey ,lightpink);
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+    </style>
+</head>
+<body id="grad1">
+<center>
+ <h1> Employee Home </h1>
+ <h3>
+ <ul>
+<li><a th:href="@{/employee/myprofile/{id}(id=${employee.id})}">Profile</a></li>
+<li><a th:href="@{/employee/{id}/leave(id=${employee.id})}">Apply Leave</a> </li>
+<li><a th:href="@{/employee/{id}/myleaves(id=${employee.id})}">View Leave</a></li>
+<li><a th:href="@{/}">Logout</a></h3></li>
+</ul>
+</center>
+</body>
+</html>

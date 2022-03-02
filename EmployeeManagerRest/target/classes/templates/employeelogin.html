@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+    
+   h1{
+	text-align:center;
+	color:turquoise;
+	font-family:Arial,serif,cooper;
+	font-weight:bolder;
+	text-decoration-color:turquoise;
+	}
+    
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin-bottom:10px;
+  
+}
+button{
+
+padding:3px;
+margin:3px;
+}
+form{
+margin-bottom:330px;
+}
+    </style>
+
+   
+</head>
+
+<body bgcolor="maroon" align="center"><br><br>
+<h1>Employee Login</h1>	<hr>	
+<form th:action="@{/employee/employeelogin}" method="POST" th:object="${employee}">
+ 
+    <label for="email">Email address</label>
+    <input type="email" id="email" th:field ="*{email}" placeholder="Enter email" > <br><br>
+    
+    <label for="password">Password</label>
+     <input type="password" id="password" th:field ="*{password}" placeholder="Enter Password" > <br><br>
+    
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</body>
+</html>
