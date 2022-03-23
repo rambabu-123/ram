@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Profile </title>
+    <style type="text/css">
+
+    div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+button{
+
+padding:3px;
+margin:3px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+    h2{
+	text-align:center;
+	color:lawngreen;
+	font-family:Arial,serif,cooper;
+	font-weight:bolder;
+	text-decoration-color: lightcoral;
+	}
+    
+    </style>
+    
+</head>
+<body bgcolor="rosybrown">
+<center>
+<ul>				
+<li><a th:href="@{/employee/myprofile/{id}(id=${employee.id})}">Profile</a></li>
+<li><a th:href="@{/employee/{id}/leave(id=${employee.id})}">Apply Leave</a></li>
+<li><a th:href="@{/employee/{id}/myleaves(id=${employee.id})}">View Leave</a></li>
+<li><a th:href="@{/}">Logout</a></li>
+</ul>
+  <table bgcolor="orange" border="5" align="center">
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Salary</th>
+      <th>Department</th>      
+      <th>Email</th>
+      <th>Address</th>
+      <th>Mobile</th>
+<!--  <th>Update</th> -->
+    </tr>
+    <tr>
+      <td th:text="${employee.firstName}"></td>
+      <td th:text="${employee.lastName}"></td>
+      <td th:text="${employee.salary}"></td>
+      <td th:text="${employee.department}"></td>
+      <td th:text="${employee.email}"></td>
+      <td th:text="${employee.address}"></td>
+      <td th:text="${employee.mobileNumber}"></td>
+      <!-- <td><a href="">Update</a></td> --> 
+    </tr>
+  </table>
+</center>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<p>{{ myid }}</p>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <p>
+      <label for="empname">empname</label>
+      <input type="text" id="firstname" name="empname" formControlName="empname">
+    </p>
+    <p>
+      <label for="lastname">empid </label>
+      <input type="text" id="empid" name="lastname" formControlName="empid">
+    </p>
+   
+    <p>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" formControlName="email">
+    </p>
+    <p>
+      <label for="gender">Geneder </label>
+      <input type="radio" value="male" id="gender" name="gender" formControlName="gender"> Male
+      <input type="radio" value="female" id="gender" name="gender" formControlName="gender"> Female
+    </p>
+    <p>
+      <label for="dateofbirth">date of birth</label>
+      <input type="date" value="dateofbirth" id="dateofbirth" name="dateofbirth" formControlName="dateofbirth">
+    </p>
+    <div *ngFor="let skills of skills; let i=index">
+      <label>
+        <input type="checkbox" [value]="skills.value"  formControlName="skills" (change)="onCheckboxChange($event)" />
+        {{skills.name}}
+      </label>
+    </div>
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>

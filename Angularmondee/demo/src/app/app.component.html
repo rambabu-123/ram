@@ -1,0 +1,25 @@
+
+<div>
+  <p>{{ myid  }}</p> 
+<div>
+  <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+    <label for="username">empid</label>
+    <input type="text" formControlName="empid"><br>
+    <label for="username">empname</label>
+    <input type="text" formControlName="empname"><br>
+  <label for="gender">Geneder </label>
+  <input type="radio" value="male" id="gender" name="gender" formControlName="gender"> Male
+  <input type="radio" value="female" id="gender" name="gender" formControlName="gender"> Female
+  <div *ngFor="let skill of skills; let i=index">
+    <label>
+      <input type="checkbox" [value]="skill.value"  formControlName="skills" (change)="onCheckboxChange(skill.$event.target.checkbox)" />
+      {{skill.name}}
+    </label>
+  </div>
+<label for="dateofbirth">date of birth:</label>
+<input type="date" id="birthday" name="birthday" formControlName="dateofbirth"><br>
+<button type="submit">save</button>
+</form>
+</div>
+<router-outlet></router-outlet> 
+</div>
